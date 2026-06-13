@@ -4,7 +4,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { LoginPage } from './features/auth/pages/LoginPage'
 import { RegisterPage } from './features/auth/pages/RegisterPage'
 import { ProtectedRoute } from './features/auth/components/ProtectedRoute'
+import { DashboardLayout } from './features/dashboard/components/DashboardLayout'
 import { DashboardPage } from './features/dashboard/pages/DashboardPage'
+import { ProfileBuilderPage } from './features/profile/pages/ProfileBuilderPage'
 import { useAuthStore } from './features/auth/stores/authStore'
 
 const queryClient = new QueryClient({
@@ -51,7 +53,10 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route element={<ProtectedRoute />}>
-              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route element={<DashboardLayout />}>
+                <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/dashboard/profile" element={<ProfileBuilderPage />} />
+              </Route>
             </Route>
           </Routes>
         </BrowserRouter>
