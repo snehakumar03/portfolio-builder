@@ -4,6 +4,7 @@ import { useAuthStore } from '@/features/auth/stores/authStore'
 const NAV_ITEMS = [
   { path: '/dashboard', label: 'Dashboard' },
   { path: '/dashboard/profile', label: 'Profile' },
+  { path: '/dashboard/skills', label: 'Skills' },
 ]
 
 export function DashboardLayout() {

@@ -7,6 +7,7 @@ import { ProtectedRoute } from './features/auth/components/ProtectedRoute'
 import { DashboardLayout } from './features/dashboard/components/DashboardLayout'
 import { DashboardPage } from './features/dashboard/pages/DashboardPage'
 import { ProfileBuilderPage } from './features/profile/pages/ProfileBuilderPage'
+import { SkillsPage } from './features/skills/pages/SkillsPage'
 import { useAuthStore } from './features/auth/stores/authStore'
 
 const queryClient = new QueryClient({
@@ -56,6 +57,7 @@ function App() {
               <Route element={<DashboardLayout />}>
                 <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/dashboard/profile" element={<ProfileBuilderPage />} />
+                <Route path="/dashboard/skills" element={<SkillsPage />} />
               </Route>
             </Route>
           </Routes>
